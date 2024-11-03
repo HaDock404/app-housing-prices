@@ -31,7 +31,7 @@ function Form() {
       const handleEstimation = async () => {
         try {
             const response = await axios.post(
-                'http://192.168.0.20:5000/predict',
+                'https://api.example.com/predict',
                 {
                     features: [
                         features.rooms,
