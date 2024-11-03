@@ -1,0 +1,10 @@
+stages:
+  - build
+
+build-stage:
+  stage: build
+  script:
+    - echo "Project Build"
+  tags:
+    - runner_00
+
