@@ -2,6 +2,13 @@ stages:
   - build
   - deploy
 
+before_script:
+  - echo "Initialisation du pipeline Docker"
+
+variables:
+  IMAGE_NAME: "housing-image:v0"
+  CONTAINER_NAME: "app-housing"
+
 build:
   stage: build
   tags:
@@ -9,9 +16,8 @@ build:
   image: docker:latest
   services:
     - docker:dind
-  variables:
-    IMAGE_NAME: "housing-image:v0"
   script:
+    - echo "Construction de l'image Docker"
     - docker build -t $IMAGE_NAME .
 
 deploy:
@@ -21,13 +27,12 @@ deploy:
   image: docker:latest
   services:
     - docker:dind
-  variables:
-    CONTAINER_NAME: "app-housing"
-    PORT: 4000
   script:
+    - echo "Vérification et suppression du conteneur existant s'il y en a un"
     - docker stop $CONTAINER_NAME || true
     - docker rm $CONTAINER_NAME || true
-    - docker run -d --name $CONTAINER_NAME -p $PORT:4000 $IMAGE_NAME
+    - echo "Déploiement de l'image Docker"
+    - docker run -dp 4000:4000 -ti --name $CONTAINER_NAME $IMAGE_NAME
 
   only:
     - main
