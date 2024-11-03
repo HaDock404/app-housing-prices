@@ -1,0 +1,38 @@
+stages:
+  - build
+  - deploy
+
+before_script:
+  - echo "Initialisation du pipeline Docker"
+
+variables:
+  IMAGE_NAME: "housing-image:v0"
+  CONTAINER_NAME: "app-housing"
+
+build:
+  stage: build
+  tags:
+    - runner_00
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - echo "Construction de l'image Docker"
+    - docker build -t $IMAGE_NAME .
+
+deploy:
+  stage: deploy
+  tags:
+    - runner_00
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - echo "Vérification et suppression du conteneur existant s'il y en a un"
+    - docker stop $CONTAINER_NAME || true
+    - docker rm $CONTAINER_NAME || true
+    - echo "Déploiement de l'image Docker"
+    - docker run -dp 4000:4000 -ti --name $CONTAINER_NAME $IMAGE_NAME
+
+  only:
+    - main
