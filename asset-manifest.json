@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/app-housing-prices/static/css/main.9824d97c.css",
-    "main.js": "/app-housing-prices/static/js/main.71a83f96.js",
+    "main.js": "/app-housing-prices/static/js/main.1d124b55.js",
     "static/js/453.44d938ee.chunk.js": "/app-housing-prices/static/js/453.44d938ee.chunk.js",
     "index.html": "/app-housing-prices/index.html",
     "main.9824d97c.css.map": "/app-housing-prices/static/css/main.9824d97c.css.map",
-    "main.71a83f96.js.map": "/app-housing-prices/static/js/main.71a83f96.js.map",
+    "main.1d124b55.js.map": "/app-housing-prices/static/js/main.1d124b55.js.map",
     "453.44d938ee.chunk.js.map": "/app-housing-prices/static/js/453.44d938ee.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9824d97c.css",
-    "static/js/main.71a83f96.js"
+    "static/js/main.1d124b55.js"
   ]
 }
