@@ -31,7 +31,7 @@ function Form() {
       const handleEstimation = async () => {
         try {
             const response = await axios.post(
-                'https://7a14-84-121-194-134.ngrok-free.app/predict',
+                'https://0xhadock.pagekite.me/predict',
                 {
                     features: [
                         features.rooms,
