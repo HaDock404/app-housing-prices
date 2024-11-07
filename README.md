@@ -8,7 +8,7 @@ Here is my APP using React.js which allows the user to estimate the price of the
 
 The objective of this project is mainly GitOps oriented. This project is stored on a Gitlab server that I created with different levels of user management and complete project configuration in order to streamline and secure the creation process. This server has a runner allowing you to carry out numerous automations using pipelines in order to carry out CI/CD of the project.  
 
-![Example](./documentation/image1.jpg)  
+[![Vidéo du projet](./documentation/image1.png)](https://www.youtube.com/watch?v=_tmrvwVn-Ps)  
 
 ### Project objective: Estimation of house prices
 
